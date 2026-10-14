@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111211">
+  <title>DTU Career Radar — Live job finder</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="shell">
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="DTU Career Radar home"><span class="brand-mark">R</span><span>CAREER<span class="brand-light">RADAR</span></span></a>
+    <div class="top-meta"><span class="live-dot"></span><span>LIVE SEARCH</span><span class="meta-divider">/</span><span>DTU TALENT LAB</span></div>
+    <button id="keyButton" class="key-button" type="button"><span class="key-icon">⌘</span> API KEY <span id="keyLabel" class="key-status">ADD</span></button>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="eyebrow-line"></span> YOUR NEXT MOVE, WITHOUT THE TAB SPRAWL</div>
+        <h1>Find work<br>that <span>moves you.</span></h1>
+        <p class="hero-description">A sharper way to search the web for real roles. Set your preferences once. Get a live, ranked shortlist from company career pages.</p>
+        <div class="hero-note"><span class="sparkle">✳</span><span>Every result is linked to its original application page.</span></div>
+      </div>
+      <div class="hero-art" aria-hidden="true"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="orbit orbit-three"></div><div class="planet"><span>R</span></div><div class="orbit-point point-a"></div><div class="orbit-point point-b"></div><div class="orbit-point point-c"></div><div class="art-label label-a">ROLE MATCH<br><b>01</b></div><div class="art-label label-b">LIVE SIGNAL<br><b>NOW</b></div></div>
+    </section>
+    <section class="app-shell" aria-label="Search preferences and results">
+    <section class="profile-column" aria-labelledby="profileTitle">
+      <div class="column-heading"><div><p class="overline"><span class="section-index">01 /</span> PREFERENCES</p><h1 id="profileTitle">Build your search</h1><p class="heading-copy">Shape the search around what you actually want. Required fields are marked with an asterisk.</p></div><span class="tiny-label">YOUR PROFILE</span></div>
+      <form id="searchForm" autocomplete="on">
+        <fieldset class="form-section"><legend><span>1</span> What are you looking for?</legend>
+          <label class="field-label" for="role">Target role / job title <b>*</b></label>
+          <input class="text-input" id="role" name="role" placeholder="e.g. Tech analyst" value="Software engineer" required>
+          <div class="field-label type-label">Opportunity type <b>*</b><span>Choose any that fit</span></div>
+          <div class="type-grid">
+            <label class="choice-card"><input type="checkbox" name="opportunityType" value="Full-time"><span class="custom-check">✓</span><span>Full-time job</span></label>
+            <label class="choice-card"><input type="checkbox" name="opportunityType" value="Internship"><span class="custom-check">✓</span><span>Internship</span></label>
+            <label class="choice-card"><input type="checkbox" name="opportunityType" value="Part-time"><span class="custom-check">✓</span><span>Part-time</span></label>
+            <label class="choice-card"><input type="checkbox" name="opportunityType" value="Contract" checked><span class="custom-check">✓</span><span>Contract</span></label>
+            <label class="choice-card"><input type="checkbox" name="opportunityType" value="Freelance"><span class="custom-check">✓</span><span>Freelance</span></label>
+            <label class="choice-card"><input type="checkbox" name="opportunityType" value="Graduate / trainee"><span class="custom-check">✓</span><span>Graduate / trainee</span></label>
+          </div>
+          <p class="helper">Select one or more. Leave none selected to include all types.</p>
+          <div class="two-up">
+            <div><label class="field-label" for="experience">Experience level</label><div class="select-wrap"><select id="experience" name="experience"><option value="Any">Any experience</option><option>Entry level</option><option>1–3 years</option><option selected>6–9 years</option><option>10+ years</option></select><span>⌄</span></div></div>
+            <div><label class="field-label" for="education">Education</label><div class="select-wrap"><select id="education" name="education"><option value="Any">Any education</option><option>High school</option><option>Associate degree</option><option selected>Bachelor’s</option><option>Master’s</option><option>Doctorate</option></select><span>⌄</span></div></div>
+          </div>
+          <label class="field-label" for="skills">Skills and tools <b>*</b></label>
+          <textarea class="text-input text-area" id="skills" name="skills" placeholder="Python, SQL, stakeholder communication…" required>Python, SQL</textarea>
+          <p class="helper">Comma-separated skills work best. Include tools, strengths, or certifications.</p>
+          <label class="field-label" for="industries">Interests or preferred industries</label>
+          <input class="text-input" id="industries" name="industries" placeholder="e.g. software, climate, fintech" value="software development">
+        </fieldset>
+
+        <fieldset class="form-section"><legend><span>2</span> Where and how do you want to work?</legend>
+          <div class="two-up">
+            <div><label class="field-label" for="location">Preferred location</label><input class="text-input" id="location" name="location" placeholder="City, region, or country" value="India"></div>
+            <div><label class="field-label" for="workMode">Work mode</label><div class="select-wrap"><select id="workMode" name="workMode"><option>Any</option><option>Remote</option><option selected>Hybrid</option><option>On-site</option></select><span>⌄</span></div></div>
+          </div>
+          <div class="two-up">
+            <div><label class="field-label" for="minimumPay">Minimum monthly pay <small>(₹)</small></label><input class="text-input" id="minimumPay" name="minimumPay" type="number" min="0" step="5000" placeholder="No minimum"></div>
+            <div><label class="field-label" for="availability">Availability</label><div class="select-wrap"><select id="availability" name="availability"><option>Any time</option><option>Immediately</option><option selected>Within a month</option><option>Within 3 months</option><option>Flexible</option></select><span>⌄</span></div></div>
+          </div>
+          <label class="field-label" for="workAuth">Work authorization / sponsorship</label>
+          <div class="select-wrap"><select id="workAuth" name="workAuth"><option>Prefer not to say</option><option selected>Eligible to work in India</option><option>Need visa sponsorship</option><option>Open to sponsorship</option></select><span>⌄</span></div>
+        </fieldset>
+
+        <fieldset class="form-section"><legend><span>3</span> LinkedIn and profile context</legend>
+          <label class="field-label" for="linkedin">LinkedIn profile URL</label>
+          <input class="text-input" id="linkedin" name="linkedin" type="url" placeholder="https://www.linkedin.com/in/your-profile/">
+          <p class="helper">Profile reference only. CareerRadar can’t read private LinkedIn pages from a URL.</p>
+          <label class="field-label" for="profileContext">Headline / About / experience summary</label>
+          <textarea class="text-input text-area context-area" id="profileContext" name="profileContext" placeholder="Paste a short profile summary to improve local matching…"></textarea>
+          <p class="privacy-note"><span>⌑</span> This profile context stays in this browser. It isn’t sent to TinyFish.</p>
+        </fieldset>
+        <div class="form-actions"><button class="reset-button" id="resetForm" type="reset">Reset profile</button><button class="primary-button" id="searchButton" type="submit"><span>Find opportunities</span><span class="button-arrow">↗</span></button></div>
+        <p class="secure-note"><span class="connection-dot"></span> Live career pages <span>·</span> refreshed on every search</p>
+      </form>
+    </section>
+
+    <section class="matches-column" aria-labelledby="matchesTitle">
+      <div class="matches-header"><div><p class="overline"><span class="section-index">02 /</span> LIVE RESULTS</p><h2 id="matchesTitle">Your shortlist</h2><p class="heading-copy">Personalized using your role, skills, experience, and preferences.</p></div><span id="freshness" class="freshness"><i></i> READY</span></div>
+      <div class="stat-strip"><div class="stat"><strong id="matchCount">—</strong><span>Matching opportunities</span></div><div class="stat"><strong id="skillsCount">0</strong><span>Skills identified</span></div><div class="stat source-stat"><strong id="sourceCount">0</strong><span>Live sources read</span></div></div>
+      <div class="privacy-banner"><span class="banner-icon">✳</span><span><b>Live listings, real links.</b> Each result comes from a current career page. Confirm details on the employer’s site.</span></div>
+      <div class="result-tools"><label class="filter-search"><span>⌕</span><input id="filterInput" type="search" placeholder="Filter by title, company, skill…" aria-label="Filter results by title, company, skill"></label><div class="select-wrap type-filter-wrap"><select id="typeFilter" aria-label="Filter by opportunity type"><option value="All">All types</option><option>Full-time</option><option>Internship</option><option>Part-time</option><option>Contract</option><option>Freelance</option><option>Graduate / trainee</option></select><span>⌄</span></div></div>
+      <div class="list-status"><span id="showingCount">Set your preferences and search</span><button id="sortButton" class="sort-button" type="button" aria-label="Toggle result sort order">BEST FIT <span>↕</span></button></div>
+      <div id="emptyState" class="results-state"><div class="empty-orbit"><span>↗</span></div><h3>Your next opportunity starts here.</h3><p>Build your profile and search current career pages. We’ll rank openings against what matters to you.</p></div>
+      <div id="loadingState" class="loading-state hidden"><div class="loader"></div><div><b>Finding your fit</b><p id="loadingText">Searching live company career pages…</p></div><div class="loading-rail"><span class="active">SEARCH</span><i></i><span>READ</span><i></i><span>MATCH</span></div></div>
+      <div id="errorState" class="error-state hidden"><div class="error-symbol">!</div><div><b>We hit a snag</b><p id="errorText"></p><button id="errorConnect" type="button">Check connection settings ↗</button></div></div>
+      <div id="resultsList" class="results-list"></div>
+      <div id="noFilterResults" class="no-filter-results hidden"><b>No results match those filters.</b><span>Try another type or search term.</span></div>
+      <div class="results-foot"><span>✳</span><span>Match scores are estimates based on listing text and your selected preferences—not hiring decisions.</span><button id="howButton" type="button">HOW MATCHING WORKS</button></div>
+      <div class="tinyfish-credit"><span class="tinyfish-symbol">↗</span><span>POWERED BY <b>TINYFISH SEARCH · FETCH · AGENT</b></span></div>
+    </section>
+  </main>
+
+  <footer class="page-footer"><span>CAREER RADAR</span><span>MADE FOR THE SEARCH THAT MATTERS.</span><span>DTU × TINYFISH · DEMO BUILD</span></footer>
+
+  </div>
+  <div id="keyModal" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="keyTitle"><div class="key-modal"><button id="closeModal" class="modal-close" aria-label="Close">×</button><span class="overline">CONNECTOR SETTINGS</span><h2 id="keyTitle">Connect TinyFish</h2><p>Your key is held in this browser session and sent to the local demo server only when you search.</p><label class="field-label" for="apiKeyInput">TINYFISH API KEY</label><input class="text-input" id="apiKeyInput" type="password" autocomplete="off" placeholder="Paste your key here"><div class="modal-actions"><button id="clearKey" class="reset-button" type="button">Clear key</button><button id="saveKey" class="primary-button" type="button">Save for this session ↗</button></div><a href="https://agent.tinyfish.ai/api-keys" target="_blank" rel="noreferrer">Manage your TinyFish API key ↗</a></div></div>
+  <div id="toast" class="toast hidden" role="status"></div>
+  <script src="/app.js" defer></script>
+</body>
+</html>

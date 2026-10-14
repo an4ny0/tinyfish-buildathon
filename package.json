@@ -1,0 +1,10 @@
+{
+  "name": "dtu-career-radar-demo",
+  "version": "1.0.0",
+  "private": true,
+  "engines": { "node": ">=20" },
+  "type": "module",
+  "scripts": {
+    "start": "node server.mjs"
+  }
+}
